@@ -122,7 +122,7 @@ body._lock {
   height: 100%;
   position: relative;
   overflow: hidden;
-  background: rgba(217, 217, 217, 0.3);
+  background: #FEFEF7;
 }
 
 .container {
@@ -135,6 +135,7 @@ body._lock {
 .page {
   flex: 1 1 auto;
   padding-bottom: 235px;
+  padding-top: 152px;
 }
 
 .btn_yellow {
@@ -483,7 +484,12 @@ body._lock {
 /* Slide styles end */
 
 .header {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background: #FEFEF7;
 }
 
 .header__body {
@@ -1967,6 +1973,7 @@ body._lock {
 @media (max-width: 1750px) {
   .page {
     padding-bottom: calc(100px + 135 * (100vw - 320px) / 1430);
+    padding-top: calc(105px + 47 * (100vw - 320px) / 1430);
   }
 
   .btn_yellow {
