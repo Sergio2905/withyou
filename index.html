@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.min.css?_v=20250311132143" />
+    <link rel="stylesheet" href="css/style.min.css?_v=20250314105503" />
     <link rel="icon" type="image/ico" href="favicon.ico">
     <title>Withyou</title>
 </head>
@@ -25,7 +25,7 @@
                 <nav class="menu__body">
                     <ul class="menu__list">
                         <li class="menu__item">
-                            <a href="#" class="menu__link">Головна</a>
+                            <a href="#" class="menu__link active">Головна</a>
                         </li>
                         <li class="menu__item">
                             <a href="#" class="menu__link">Оголошення</a>
@@ -64,7 +64,7 @@
             <nav class="nav__body">
                 <ul class="nav__list">
                     <li class="nav__item">
-                        <a href="#" class="nav__link">Головна</a>
+                        <a href="#" class="nav__link active">Головна</a>
                     </li>
                     <li class="nav__item">
                         <a href="#" class="nav__link">Оголошення</a>
@@ -98,7 +98,7 @@
 
         <div class="page">
 
-            <main class="main">
+            <section class="main">
                 <div class="main__container container">
                     <div class="main__body">
                         <div class="main__info">
@@ -111,11 +111,14 @@
                             </p>
                         </div>
                         <div class="main__image">
+                            <source media="(min-width: 1921px)" srcset="img/main/image.webp" type="image/webp">
+                            <source media="(min-width: 769px)" srcset="img/main/image.webp" type="image/webp">
+                            <source media="(max-width: 768px)" srcset="img/main/image.webp" type="image/webp">
                             <picture><source srcset="img/main/image.webp" type="image/webp"><img src="img/main/image.png" alt="Image"></picture>
                         </div>
                     </div>
                 </div>
-            </main>
+            </section>
 
             <section class="cards">
                 <div class="cards__container container">
@@ -127,9 +130,11 @@
                                         Додати речі для дітей
                                         <img src="img/cards/icon.svg" alt="Icon">
                                     </h3>
-                                    <a href="#" class="card__btn btn_yellow">
-                                        ДОЛУЧИТИСЬ
-                                    </a>
+                                    <div class="card__footer">
+                                        <a href="#" class="card__btn btn_yellow">
+                                            ДОЛУЧИТИСЬ
+                                        </a>
+                                    </div>
                                 </div>
                                 <div class="card__back">
                                     <p class="card__text">
@@ -150,9 +155,11 @@
                                         Організувати захід
                                         <img src="img/cards/icon2.svg" alt="Icon">
                                     </h3>
-                                    <a href="#" class="card__btn btn_yellow">
-                                        ДОЛУЧИТИСЬ
-                                    </a>
+                                    <div class="card__footer">
+                                        <a href="#" class="card__btn btn_yellow">
+                                            ДОЛУЧИТИСЬ
+                                        </a>
+                                    </div>
                                 </div>
                                 <div class="card__back">
                                     <p class="card__text">
@@ -173,9 +180,11 @@
                                         Зробити донат
                                         <img src="img/cards/icon3.svg" alt="Icon">
                                     </h3>
-                                    <a href="#" class="card__btn btn_yellow">
-                                        ДОЛУЧИТИСЬ
-                                    </a>
+                                    <div class="card__footer">
+                                        <a href="#" class="card__btn btn_yellow">
+                                            ДОЛУЧИТИСЬ
+                                        </a>
+                                    </div>
                                 </div>
                                 <div class="card__back">
                                     <p class="card__text">
@@ -196,9 +205,11 @@
                                         Стати партнером
                                         <img src="img/cards/icon4.svg" alt="Icon">
                                     </h3>
-                                    <a href="#" class="card__btn btn_yellow">
-                                        ДОЛУЧИТИСЬ
-                                    </a>
+                                    <div class="card__footer">
+                                        <a href="#" class="card__btn btn_yellow">
+                                            ДОЛУЧИТИСЬ
+                                        </a>
+                                    </div>
                                 </div>
                                 <div class="card__back">
                                     <p class="card__text">
@@ -219,9 +230,11 @@
                                         Опублікувати подію
                                         <img src="img/cards/icon5.svg" alt="Icon">
                                     </h3>
-                                    <a href="#" class="card__btn btn_yellow">
-                                        ДОЛУЧИТИСЬ
-                                    </a>
+                                    <div class="card__footer">
+                                        <a href="#" class="card__btn btn_yellow">
+                                            ДОЛУЧИТИСЬ
+                                        </a>
+                                    </div>
                                 </div>
                                 <div class="card__back">
                                     <p class="card__text">
@@ -245,7 +258,7 @@
                                         Якщо ви потребуєте будь якої допомоги, то можете залишити свою заявку тут
                                     </p>
                                     <a href="#" class="card__btn btn_blue">
-                                        ЗАЛИШИТИ ЗАЯВКУ НА ДОПОМОГУ
+                                        ЗАЛИШИТИ ЗАЯВКУ <span>НА ДОПОМОГУ</span>
                                     </a>
                                 </div>
                             </div>
@@ -515,7 +528,7 @@
                                 <svg>
                                     <use href="img/icons/icons.svg#eye"></use>
                                 </svg>
-                                <span>ПЕРЕГЛЯНУТИ ВСІ КАТЕГОРІЇ</span>
+                                <span><span>ПЕРЕГЛЯНУТИ</span> ВСІ КАТЕГОРІЇ</span>
                             </a>
                         </div>
                         <div class="search__block">
@@ -565,7 +578,7 @@
                                 <svg>
                                     <use href="img/icons/icons.svg#eye"></use>
                                 </svg>
-                                <span>ПЕРЕГЛЯНУТИ ВСІ МІСТА</span>
+                                <span><span>ПЕРЕГЛЯНУТИ</span> ВСІ МІСТА</span>
                             </a>
                         </div>
                     </div>
@@ -577,11 +590,16 @@
                     <div class="help__body">
                         <div class="help__image lazy">
                             <picture>
-                                <source data-srcset="img/help/image.webp" srcset="img/plug.png" type="image/webp">
+                                <source media="(min-width: 1921px)" data-srcset="img/help/image.webp"
+                                    srcset="img/plug.png" type="image/webp">
+                                <source media="(min-width: 769px)" data-srcset="img/help/image.webp"
+                                    srcset="img/plug.png" type="image/webp">
+                                <source media="(max-width: 768px)" data-srcset="img/help/image.webp"
+                                    srcset="img/plug.png" type="image/webp">
                                 <img data-src="img/help/image.png" src="img/plug.png" alt="Image">
                             </picture>
                             <a href="#" class="help__btn btn_yellow">
-                                ЗАЛИШИТИ ЗАЯВКУ НА ДОПОМОГУ
+                                ЗАЛИШИТИ ЗАЯВКУ <span>НА ДОПОМОГУ</span>
                             </a>
                         </div>
                         <h2 class="help__title">МЕНІ <span class="help__small">ПОТРІБНА</span></h2>
@@ -959,7 +977,12 @@
                         </h2>
                         <div class="simple__image lazy">
                             <picture>
-                                <source data-srcset="img/simple/image.webp" srcset="img/plug.png" type="image/webp">
+                                <source media="(min-width: 1921px)" data-srcset="img/simple/image.webp"
+                                    srcset="img/plug.png" type="image/webp">
+                                <source media="(min-width: 769px)" data-srcset="img/simple/image.webp"
+                                    srcset="img/plug.png" type="image/webp">
+                                <source media="(max-width: 768px)" data-srcset="img/simple/image.webp"
+                                    srcset="img/plug.png" type="image/webp">
                                 <img data-src="img/simple/image.png" src="img/plug.png" alt="Image">
                             </picture>
                         </div>
@@ -1430,7 +1453,12 @@
                         </div>
                         <div class="about__image lazy">
                             <picture>
-                                <source data-srcset="img/about/image.webp" srcset="img/plug.png" type="image/webp">
+                                <source media="(min-width: 1921px)" data-srcset="img/about/image.webp"
+                                    srcset="img/plug.png" type="image/webp">
+                                <source media="(min-width: 769px)" data-srcset="img/about/image.webp"
+                                    srcset="img/plug.png" type="image/webp">
+                                <source media="(max-width: 768px)" data-srcset="img/about/image.webp"
+                                    srcset="img/plug.png" type="image/webp">
                                 <img data-src="img/about/image.png" src="img/plug.png" alt="Image">
                             </picture>
                         </div>
@@ -1508,7 +1536,7 @@
     </div>
 </div>
 
-    <script src="js/app.min.js?_v=20250311132143"></script>
+    <script src="js/app.min.js?_v=20250314105503"></script>
 </body>
 
 </html>
