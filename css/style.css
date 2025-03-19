@@ -159,13 +159,14 @@ body._lock {
   font-weight: 700;
   color: var(--blue);
   padding: 15px 20px;
-  border-radius: 100px;
+  border-radius: 15px;
   background: var(--yellow);
   text-decoration: none;
   text-transform: uppercase;
   display: inline-block;
   width: -moz-fit-content;
   width: fit-content;
+  transition: all 0.5s ease;
 }
 
 .btn_blue {
@@ -173,27 +174,30 @@ body._lock {
   font-weight: 700;
   color: var(--yellow);
   padding: 15px 20px;
-  border-radius: 100px;
+  border-radius: 15px;
   background: var(--blue);
   text-decoration: none;
   text-transform: uppercase;
   display: inline-block;
   width: -moz-fit-content;
   width: fit-content;
+  transition: all 0.5s ease;
 }
 
 .btn_white {
   font-size: 1.3125rem;
   font-weight: 700;
   color: var(--blue);
-  padding: 15px 20px;
-  border-radius: 100px;
+  padding: 10px 20px;
+  border-radius: 15px;
   background: var(--white);
   text-decoration: none;
   text-transform: uppercase;
   display: inline-block;
   width: -moz-fit-content;
   width: fit-content;
+  border: 3px solid var(--white);
+  transition: all 0.5s ease;
 }
 
 .title {
@@ -537,6 +541,7 @@ body._lock {
   background: var(--yellow);
   border-radius: 100px;
   padding: 20px 40px;
+  transition: all 0.5s ease;
 }
 
 .header__options {
@@ -982,6 +987,10 @@ body._lock {
   gap: 20px;
 }
 
+.offer__btn {
+  border-radius: 15px;
+}
+
 .offer__time {
   font-size: 0.9375rem;
   color: var(--blue);
@@ -1066,6 +1075,7 @@ body._lock {
   border-radius: 50px;
   padding: 30px;
   background: var(--light-gray);
+  transition: all 0.5s ease;
 }
 
 .donate__image {
@@ -1107,6 +1117,7 @@ body._lock {
 }
 
 .donate__btn {
+  border-radius: 15px;
   margin-top: 50px;
 }
 
@@ -1432,12 +1443,16 @@ body._lock {
   border-radius: 10px;
   background: var(--blue);
   text-decoration: none;
+  transition: all 0.5s ease;
+  border: 1px solid var(--blue);
 }
 
 .article {
   padding: 30px;
   background: var(--light-gray);
   border-radius: 50px;
+  border: 3px solid var(--light-gray);
+  transition: all 0.5s ease;
 }
 
 .article__header {
@@ -1474,6 +1489,8 @@ body._lock {
   position: absolute;
   top: 15px;
   right: 15px;
+  border: 1px solid var(--blue);
+  transition: all 0.5s ease;
 }
 
 .article__title {
@@ -1509,6 +1526,8 @@ body._lock {
   max-width: 184px;
   width: 100%;
   text-align: center;
+  border-radius: 15px;
+  border: 3px solid var(--blue);
 }
 
 .article__date {
@@ -1552,6 +1571,14 @@ body._lock {
   max-width: 100%;
   max-height: 100%;
   height: auto;
+}
+
+.locations {
+  margin-top: 200px;
+}
+
+.locations__body {
+  margin-top: 50px;
 }
 
 .talents {
@@ -1756,6 +1783,7 @@ body._lock {
   height: 100%;
   display: flex;
   flex-direction: column;
+  transition: all 0.5s ease;
 }
 
 .review__header {
@@ -1998,6 +2026,19 @@ body._lock {
   color: var(--blue);
   text-decoration: none;
   text-transform: uppercase;
+  position: relative;
+}
+
+.menu-footer__link::after {
+  content: "";
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 0;
+  height: 2px;
+  background: var(--blue);
+  transition: all 0.3s ease;
 }
 
 @media (max-width: 1750px) {
@@ -2272,6 +2313,14 @@ body._lock {
 
   .simple__title a {
     font-size: calc(4.0625rem + 105 * (100vw - 20rem) / 1430);
+  }
+
+  .locations {
+    margin-top: calc(100px + 100 * (100vw - 320px) / 1430);
+  }
+
+  .locations__body {
+    margin-top: calc(30px + 20 * (100vw - 320px) / 1430);
   }
 
   .talents {
@@ -2693,6 +2742,25 @@ body._lock {
 }
 
 @media (any-hover: hover) {
+  .btn_yellow:hover {
+    color: var(--white);
+    background: var(--blue);
+  }
+
+  .btn_blue:hover {
+    background: var(--yellow);
+    color: var(--blue);
+  }
+
+  .btn_white:hover {
+    border-color: var(--blue);
+  }
+
+  .header__btn:hover {
+    background: var(--blue);
+    color: var(--yellow);
+  }
+
   .menu__link:hover,
   .nav__link:hover {
     background: #B6C4D1;
@@ -2703,9 +2771,45 @@ body._lock {
     transform: rotateY(-180deg);
   }
 
+  .donate__card:hover {
+    background: #ACB8C1;
+  }
+
+  .categories__link:hover {
+    background: var(--white);
+    color: var(--blue);
+  }
+
+  .article:hover {
+    border-color: var(--blue);
+  }
+
+  .article__category:hover {
+    background: var(--white);
+    color: var(--blue);
+  }
+
+  .article__btn:hover {
+    background: var(--white);
+    color: var(--blue);
+    border-color: var(--blue);
+  }
+
+  .review:hover {
+    background: #EEF1F3;
+  }
+
+  .reports__btn:hover {
+    color: var(--yellow);
+  }
+
   .info:hover .info__text {
     opacity: 1;
     visibility: visible;
     transform: translate(0, 0);
+  }
+
+  .menu-footer__link:hover::after {
+    width: 100%;
   }
 }
