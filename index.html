@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.min.css?_v=20250319102239" />
+    <link rel="stylesheet" href="css/style.min.css?_v=20250320104647" />
     <link rel="icon" type="image/ico" href="favicon.ico">
     <title>Withyou</title>
 </head>
@@ -994,75 +994,87 @@
                 <div class="locations__container container">
                     <h2 class="locations__title title">Мапа оголошень</h2>
                     <div class="locations__body">
-                        <div>
-                            <button id="filter-all">Усі</button>
-                            <button id="filter-rechi">Речі</button>
-                            <button id="filter-podii">Події</button>
-                            <button id="filter-dopomoga">Допомога</button>
+                        <div class="locations__map" id="map"></div>
+                        <div class="locations__filters">
+                            <button type="button" class="locations__filter" id="filter-all">
+                                <img src="img/location/location_all.svg" alt="Icon">
+                                Усі
+                            </button>
+                            <button type="button" class="locations__filter" id="filter-rechi">
+                                <img src="img/location/location_things.svg" alt="Icon">
+                                Речі
+                            </button>
+                            <button type="button" class="locations__filter" id="filter-podii">
+                                <img src="img/location/location_events.svg" alt="Icon">
+                                Події
+                            </button>
+                            <button type="button" class="locations__filter" id="filter-dopomoga">
+                                <img src="img/location/location_help.svg" alt="Icon">
+                                Допомога
+                            </button>
                         </div>
-                        <div id="map" style="width: 100%; height: 500px;"></div>
-                        <script
-                            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqtieJ4HlDFlOEAO_5pVooiGoRxKvRNKo&callback=initMap"
-                            async defer>
-                            </script>
-
-                        <script>
-                            let map;
-                            let markers = [];
-                            const locations = [
-                                { type: 'Речі', lat: 50.4501, lng: 30.5234, title: 'Магазин одягу', link: 'https://example.com/1', icon: './img/location/location.svg' },
-                                { type: 'Події', lat: 49.8397, lng: 24.0297, title: 'Концерт', link: 'https://example.com/2', icon: './img/location/location.svg' },
-                                { type: 'Допомога', lat: 48.9226, lng: 24.7111, title: 'Волонтерський центр', link: 'https://example.com/3', icon: './img/location/location.svg' },
-                                { type: 'Речі', lat: 46.4825, lng: 30.7233, title: 'Магазин електроніки', link: 'https://example.com/4', icon: './img/location/location.svg' },
-                                { type: 'Події', lat: 50.4547, lng: 30.5297, title: 'Лекція', link: 'https://example.com/5', icon: './img/location/location.svg' }
-                            ];
-
-                            function initMap() {
-                                map = new google.maps.Map(document.getElementById("map"), {
-                                    center: { lat: 49.0, lng: 31.0 },
-                                    zoom: 6
-                                });
-
-                                loadMarkers();
-                            }
-
-                            function loadMarkers(filterType = null) {
-                                clearMarkers();
-
-                                locations.forEach(location => {
-                                    if (!filterType || location.type === filterType) {
-                                        let marker = new google.maps.Marker({
-                                            position: { lat: location.lat, lng: location.lng },
-                                            map: map,
-                                            title: location.title,
-                                            icon: location.icon
-                                        });
-
-                                        let infoWindow = new google.maps.InfoWindow({
-                                            content: `<h3>${location.title}</h3><a href='${location.link}' target='_blank'>Детальніше</a>`
-                                        });
-
-                                        marker.addListener("click", () => {
-                                            infoWindow.open(map, marker);
-                                        });
-
-                                        markers.push(marker);
-                                    }
-                                });
-                            }
-
-                            function clearMarkers() {
-                                markers.forEach(marker => marker.setMap(null));
-                                markers = [];
-                            }
-
-                            // Фільтрація
-                            document.getElementById("filter-rechi").addEventListener("click", () => loadMarkers('Речі'));
-                            document.getElementById("filter-podii").addEventListener("click", () => loadMarkers('Події'));
-                            document.getElementById("filter-dopomoga").addEventListener("click", () => loadMarkers('Допомога'));
-                            document.getElementById("filter-all").addEventListener("click", () => loadMarkers());
-                        </script>
                     </div>
+                    <script
+                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqtieJ4HlDFlOEAO_5pVooiGoRxKvRNKo&callback=initMap"
+                        async defer>
+                        </script>
+
+                    <script>
+                        let map;
+                        let markers = [];
+                        const locations = [
+                            { type: 'Речі', lat: 50.4501, lng: 30.5234, title: 'Магазин одягу', link: 'https://example.com/1', icon: './img/location/location_things.svg' },
+                            { type: 'Події', lat: 49.8397, lng: 24.0297, title: 'Концерт', link: 'https://example.com/2', icon: './img/location/location_events.svg' },
+                            { type: 'Допомога', lat: 48.9226, lng: 24.7111, title: 'Волонтерський центр', link: 'https://example.com/3', icon: './img/location/location_help.svg' },
+                            { type: 'Речі', lat: 46.4825, lng: 30.7233, title: 'Магазин електроніки', link: 'https://example.com/4', icon: './img/location/location_things.svg' },
+                            { type: 'Події', lat: 50.4547, lng: 30.5297, title: 'Лекція', link: 'https://example.com/5', icon: './img/location/location_events.svg' }
+                        ];
+
+                        function initMap() {
+                            map = new google.maps.Map(document.getElementById("map"), {
+                                center: { lat: 49.0, lng: 31.0 },
+                                zoom: 6
+                            });
+
+                            loadMarkers();
+                        }
+
+                        function loadMarkers(filterType = null) {
+                            clearMarkers();
+
+                            locations.forEach(location => {
+                                if (!filterType || location.type === filterType) {
+                                    let marker = new google.maps.Marker({
+                                        position: { lat: location.lat, lng: location.lng },
+                                        map: map,
+                                        title: location.title,
+                                        icon: location.icon
+                                    });
+
+                                    let infoWindow = new google.maps.InfoWindow({
+                                        content: `<h3>${location.title}</h3><a href='${location.link}' target='_blank'>Детальніше</a>`
+                                    });
+
+                                    marker.addListener("click", () => {
+                                        infoWindow.open(map, marker);
+                                    });
+
+                                    markers.push(marker);
+                                }
+                            });
+                        }
+
+                        function clearMarkers() {
+                            markers.forEach(marker => marker.setMap(null));
+                            markers = [];
+                        }
+
+                        // Фільтрація
+                        document.getElementById("filter-rechi").addEventListener("click", () => loadMarkers('Речі'));
+                        document.getElementById("filter-podii").addEventListener("click", () => loadMarkers('Події'));
+                        document.getElementById("filter-dopomoga").addEventListener("click", () => loadMarkers('Допомога'));
+                        document.getElementById("filter-all").addEventListener("click", () => loadMarkers());
+                    </script>
                 </div>
             </section>
 
@@ -1612,7 +1624,7 @@
     </div>
 </div>
 
-    <script src="js/app.min.js?_v=20250319102239"></script>
+    <script src="js/app.min.js?_v=20250320104647"></script>
 </body>
 
 </html>

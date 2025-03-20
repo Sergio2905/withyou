@@ -1579,6 +1579,39 @@ body._lock {
 
 .locations__body {
   margin-top: 50px;
+  display: flex;
+  align-items: center;
+  gap: 230px;
+}
+
+.locations__map {
+  width: 100%;
+  flex: 1 1 70%;
+  border-radius: 30px;
+  overflow: hidden;
+  aspect-ratio: 1120/700;
+}
+
+.locations__filters {
+  flex: 1 1 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.locations__filter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.locations__filter img {
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
 }
 
 .talents {
@@ -2321,6 +2354,13 @@ body._lock {
 
   .locations__body {
     margin-top: calc(30px + 20 * (100vw - 320px) / 1430);
+    gap: calc(32px + 198 * (100vw - 768px) / 982);
+  }
+
+  .locations__filter img {
+    width: calc(30px + 10 * (100vw - 320px) / 1430);
+    min-width: calc(30px + 10 * (100vw - 320px) / 1430);
+    height: calc(30px + 10 * (100vw - 320px) / 1430);
   }
 
   .talents {
@@ -2515,6 +2555,18 @@ body._lock {
 
   .simple__image {
     max-width: 500px;
+  }
+
+  .locations__body {
+    flex-direction: column-reverse;
+    gap: 32px;
+  }
+
+  .locations__filters {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    row-gap: 10px;
   }
 
   .talents__controls {
