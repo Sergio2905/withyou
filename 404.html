@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.min.css?_v=20250517121732" />
+    <link rel="stylesheet" href="css/style.min.css?_v=20250601120807" />
     <link rel="icon" type="image/ico" href="favicon.ico">
     <title>Withyou</title>
 </head>
@@ -18,7 +18,7 @@
             <a href="/" class="header__logo">
                 <picture><source srcset="img/logo.webp" type="image/webp"><img src="img/logo.png" alt="Logo"></picture>
             </a>
-            <button type="button" class="header__btn">
+            <button type="button" class="header__btn" data-modal="donate_yellow">
                 ЗАДОНАТИТИ
             </button>
             <div class="header__menu menu">
@@ -149,15 +149,213 @@
 </footer>
     </div>
 
-    <div class="modal" id="case">
+    <div class="modal" id="donate">
     <div class="modal__wrapper">
         <div class="modal__content">
-            
+            <div class="modal__header">
+                <h2 class="modal__title">
+                    Зробити донат
+                </h2>
+                <button type="button" class="modal__close">
+                    <svg>
+                        <use href="img/icons/icons.svg#close-str"></use>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal__body">
+                <p class="modal__text">
+                    Можете вказати свої ПІБ або зробити анонімний внесок.
+                </p>
+                <div class="modal__input">
+                    <input type="text" placeholder="ПІБ" name="name">
+                </div>
+                <div class="modal__checkbox checkbox">
+                    Зробити анонімний внесок
+                    <input type="checkbox" name="anonim" value="">
+                </div>
+                <p class="modal__text">
+                    Вкажіть вашу пошту для отримання коду відстеження донату! Ви зможете переглядати звітність та
+                    отримаєте повідомлення коли ваші кошти допоможуть дитині та на що вони були витрачені!
+                </p>
+                <div class="modal__input">
+                    <input type="text" placeholder="Email" name="email">
+                </div>
+                <div class="modal__for">
+                    Допомога для:
+                    <div class="modal__select select">
+                        <div class="select__container">
+                            <div class="select__option" data-value="general">Загальний фонд</div>
+                            <div class="select__option" data-value="personal">Обрати дитину яка потребує допомоги</div>
+                        </div>
+                        <div class="select__checked">Загальний фонд</div>
+                        <input type="text" value="general">
+                    </div>
+                </div>
+                <div class="modal__block">
+                    <div class="modal__search search-form">
+                        <div class="search-form__input">
+                            <input type="text" placeholder="Місто" name="location">
+                            <svg>
+                                <use href="img/icons/icons.svg#arrow"></use>
+                            </svg>
+                        </div>
+                        <div class="search-form__body">
+                            <div class="search-form__option">Херсон</div>
+                            <div class="search-form__option">Херсон</div>
+                            <div class="search-form__option">Херсон</div>
+                            <div class="search-form__option">Херсон</div>
+                            <div class="search-form__option">Херсон</div>
+                            <div class="search-form__option">Херсон</div>
+                            <div class="search-form__option">Херсон</div>
+                            <div class="search-form__option">Херсон</div>
+                            <div class="search-form__option">Херсон</div>
+                        </div>
+                    </div>
+                    <p class="modal__help">Будь ласка, введіть 3 або більше літер</p>
+                </div>
+                <div class="modal__block">
+                    <span class="modal__label">Або</span>
+                    <div class="modal__search search-form">
+                        <div class="search-form__input">
+                            <input type="text" placeholder="ПІБ" name="name">
+                            <svg>
+                                <use href="img/icons/icons.svg#arrow"></use>
+                            </svg>
+                        </div>
+                        <div class="search-form__body">
+                            <div class="search-form__option">Херсон</div>
+                            <div class="search-form__option">Херсон</div>
+                            <div class="search-form__option">Херсон</div>
+                            <div class="search-form__option">Херсон</div>
+                            <div class="search-form__option">Херсон</div>
+                            <div class="search-form__option">Херсон</div>
+                            <div class="search-form__option">Херсон</div>
+                            <div class="search-form__option">Херсон</div>
+                            <div class="search-form__option">Херсон</div>
+                        </div>
+                    </div>
+                    <p class="modal__help">(Введіть ПІБ дитини, якій хочете зробити адресну допомогу)</p>
+                </div>
+                <div class="modal__btns">
+                    <a href="#" class="modal__btn modal__btn_black" target="_blank">
+                        <img src="img/modal/mono.svg" alt="Monobank">
+                    </a>
+                    <a href="#" class="modal__btn" target="_blank">
+                        <img src="img/modal/privatbank.svg" alt="Privatbank">
+                    </a>
+                    <a href="#" class="modal__btn" target="_blank">
+                        <img src="img/modal/donatello.svg" alt="Donatello">
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
-    <script src="js/app.min.js?_v=20250517121732"></script>
+<div class="modal modal_yellow" id="donate_yellow">
+    <div class="modal__wrapper">
+        <div class="modal__content">
+            <div class="modal__header">
+                <h2 class="modal__title">
+                    Зробити донат
+                </h2>
+                <button type="button" class="modal__close">
+                    <svg>
+                        <use href="img/icons/icons.svg#close-str"></use>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal__body">
+                <p class="modal__text">
+                    Можете вказати свої ПІБ або зробити анонімний внесок.
+                </p>
+                <div class="modal__input">
+                    <input type="text" placeholder="ПІБ" name="name">
+                </div>
+                <div class="modal__checkbox checkbox">
+                    Зробити анонімний внесок
+                    <input type="checkbox" name="anonim" value="">
+                </div>
+                <p class="modal__text">
+                    Вкажіть вашу пошту для отримання коду відстеження донату! Ви зможете переглядати звітність та
+                    отримаєте повідомлення коли ваші кошти допоможуть дитині та на що вони були витрачені!
+                </p>
+                <div class="modal__input">
+                    <input type="text" placeholder="Email" name="email">
+                </div>
+                <div class="modal__for">
+                    Допомога для:
+                    <div class="modal__select select">
+                        <div class="select__container">
+                            <div class="select__option" data-value="general">Загальний фонд</div>
+                            <div class="select__option" data-value="personal">Обрати дитину яка потребує допомоги</div>
+                        </div>
+                        <div class="select__checked">Загальний фонд</div>
+                        <input type="text" value="general">
+                    </div>
+                </div>
+                <div class="modal__block">
+                    <div class="modal__search search-form">
+                        <div class="search-form__input">
+                            <input type="text" placeholder="Місто" name="location">
+                            <svg>
+                                <use href="img/icons/icons.svg#arrow"></use>
+                            </svg>
+                        </div>
+                        <div class="search-form__body">
+                            <div class="search-form__option">Херсон</div>
+                            <div class="search-form__option">Херсон</div>
+                            <div class="search-form__option">Херсон</div>
+                            <div class="search-form__option">Херсон</div>
+                            <div class="search-form__option">Херсон</div>
+                            <div class="search-form__option">Херсон</div>
+                            <div class="search-form__option">Херсон</div>
+                            <div class="search-form__option">Херсон</div>
+                            <div class="search-form__option">Херсон</div>
+                        </div>
+                    </div>
+                    <p class="modal__help">Будь ласка, введіть 3 або більше літер</p>
+                </div>
+                <div class="modal__block">
+                    <span class="modal__label">Або</span>
+                    <div class="modal__search search-form">
+                        <div class="search-form__input">
+                            <input type="text" placeholder="ПІБ" name="name">
+                            <svg>
+                                <use href="img/icons/icons.svg#arrow"></use>
+                            </svg>
+                        </div>
+                        <div class="search-form__body">
+                            <div class="search-form__option">Херсон</div>
+                            <div class="search-form__option">Херсон</div>
+                            <div class="search-form__option">Херсон</div>
+                            <div class="search-form__option">Херсон</div>
+                            <div class="search-form__option">Херсон</div>
+                            <div class="search-form__option">Херсон</div>
+                            <div class="search-form__option">Херсон</div>
+                            <div class="search-form__option">Херсон</div>
+                            <div class="search-form__option">Херсон</div>
+                        </div>
+                    </div>
+                    <p class="modal__help">(Введіть ПІБ дитини, якій хочете зробити адресну допомогу)</p>
+                </div>
+                <div class="modal__btns">
+                    <a href="#" class="modal__btn modal__btn_black" target="_blank">
+                        <img src="img/modal/mono.svg" alt="Monobank">
+                    </a>
+                    <a href="#" class="modal__btn" target="_blank">
+                        <img src="img/modal/privatbank.svg" alt="Privatbank">
+                    </a>
+                    <a href="#" class="modal__btn" target="_blank">
+                        <img src="img/modal/donatello.svg" alt="Donatello">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script src="js/app.min.js?_v=20250601120807"></script>
 </body>
 
 </html>
